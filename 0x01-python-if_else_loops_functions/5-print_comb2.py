@@ -4,3 +4,4 @@ for i in range(0, 100):
         print(f"0{i},".format(i), end=' ')
     else:
         print(f"{i},".format(i), end=' ')
+print('\n')
