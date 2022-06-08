@@ -7,4 +7,5 @@ def uniq_add(my_list=[]):
     for i in my_list:
         if i not in nlist:
             result = result + i
+        nlist.append(i)
     return result
