@@ -5,6 +5,6 @@ def only_diff_elements(set_1, set_2):
         if i not in set_2:
             same.append(i)
     for j in set_2:
-        if j not in set_1
+        if j not in set_1:
             same.append(j)
     return same
