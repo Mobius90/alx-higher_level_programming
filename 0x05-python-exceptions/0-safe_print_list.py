@@ -7,7 +7,7 @@ def safe_print_list(my_list=[], x=0):
                 continue
             print("{:d}".format(i), end="")
             y = y + 1
-    except:
-        return x
-    print("")
+            print("")
+    except Exception:
+        print("")
     return y
