@@ -1,37 +1,40 @@
 #!/usr/bin/python3
 """
-This module defines the a Rectangle Object.
+a module that defines a Rectangle class
 """
 
 
 class Rectangle:
-    """Retangle object with getter and setters
+    """
+    defines a rectangle
     """
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.width = width
         self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
-
     def __str__(self):
-        total = ""
-        if self.__height == 0 or self.width == 0:
-            return total
+        """
+        returns # for the printable representation of the Rectangle
+        """
+        a = ""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         for i in range(self.__height):
-            total += (str(self.print_symbol) * self.__width)
-            if i != self.__height - 1:
-                total += "\n"
-        return total
+            a = a + (str(self.print_symbol) * self.__width)
+            if i is not self.__height - 1:
+                a = a + "\n"
+        return a
 
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        return print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -54,11 +57,11 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if not isinstance(value, int):
+        self.__width = value
+        if type(value) is not int:
             raise TypeError('width must be an integer')
         elif value < 0:
             raise ValueError('width must be >= 0')
-        self.__width = value
 
     @property
     def height(self):
@@ -66,16 +69,16 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if not isinstance(value, int):
+        self.__height = value
+        if type(value) is not int:
             raise TypeError('height must be an integer')
         elif value < 0:
             raise ValueError('height must be >= 0')
-        self.__height = value
 
     def area(self):
-        return self.__width * self.__height
+        return self.__height * self.__width
 
     def perimeter(self):
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return (2 * self.__width) + (2 * self.__height)
+        return 2 * (self.__width + self.__height)
