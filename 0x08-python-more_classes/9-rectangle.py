@@ -23,7 +23,7 @@ class Rectangle:
         """
         a = ""
         if self.__width == 0 or self.__height == 0:
-            return ("")
+            return a
         for i in range(self.__height):
             a = a + (str(self.print_symbol) * self.__width)
             if i is not self.__height - 1:
