@@ -1,0 +1,14 @@
+Test cases for '0-add_integer.py'
+
+Importing:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Addition
+    >>>add_integer(1, 2)
+    3
+
+Addition with Null
+    >>>add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
