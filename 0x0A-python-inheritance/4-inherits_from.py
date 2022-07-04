@@ -3,7 +3,7 @@
 
 
 def inherits_from(obj, a_class):
-    """checks if an object is inherited instance of a class.
+    """Checks if an object is inherited instance of a class.
     Args:
         obj (any): Object to check
         a_class (type): Class to match obj with
