@@ -5,5 +5,7 @@ a function that returns the list of available attributes and methods of an objec
 
 
 def lookup(obj):
-    """returns a list"""
+    """
+    returns a list
+    """
     return dir(obj)
