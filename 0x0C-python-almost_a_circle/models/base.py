@@ -19,34 +19,37 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        """returns the string representation of list_dictionaries"""
+        if list_dictionaries is None:
             return "[]"
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
-        list_objs = []
-        for i in list_objs:
-            list_objs.append(i.to_dictionary())
-        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as jsonfile:
-            jsonfile.write(cls.to_json_string(list_objs))
+        filename = cls.__name__ + ".json"
+        text = []
+        if list_objs is not None:
+            for list1 in list_objs:
+                text.append(list1.to_dictionary())
+        with open(filename, mode='w', encoding="utf-8") as MyFile:
+            return MyFile.write(Base.to_json_string(text))
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string representation json_string"""
-        if json_string is None or len(json_string) == 0:
-            return []
-        return json.loads(json_string)
+        if json_string is None:
+            return "[]"
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
-        new_inst = cls(1, 1)
-        if new_inst is not None:
-            new_inst.update(**dictionary)
-        return new_inst
+        if cls.__name__ == "Rectangle":
+            tmp = cls(10, 10)
+        elif cls.__name__ == "Square":
+            tmp = cls(10, 10)
+        tmp.update(**dictionary)
+        return tmp
 
     @classmethod
     def load_from_file(cls):
