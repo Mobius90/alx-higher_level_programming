@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Defines module of Base class"""
+"""module of 'Base' class"""
+
+import json
 
 
 class Base:
-    """A Base class"""
+    """Representation of a Base"""
 
     __nb_objects = 0
 
