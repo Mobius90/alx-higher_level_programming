@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-
-"""Defines a class called base"""
+"""Defines module of Base class"""
 
 
 class Base:
-    """A base class"""
+    """A Base class"""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if id != None:
+        """class constructor"""
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
